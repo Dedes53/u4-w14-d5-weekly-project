@@ -15,9 +15,6 @@ public abstract class FileMultimediale {
     public String getNome() {
         return this.nome;
     }
-
-    //setters
-
-    //metodi
+    
 
 }

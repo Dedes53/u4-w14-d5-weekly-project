@@ -11,7 +11,7 @@ public class Main {
     static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        
+
         Video pippo = new Video("pippo", 4, 3, 5);
         Audio pluto = new Audio("pluto", 3, 5);
         Immagine minnie = new Immagine("Minnie", 3);
@@ -114,6 +114,3 @@ public class Main {
 
 
 }
-
-// dato un array di 5 FileMultimediale l'utente potrà scegliere quale riprodurre (switch dei 6 casi [con 0 esco])
-// dentro ai casi dovrò richiamare un metodo che decida per quell'elemento se chiamare play o show.
