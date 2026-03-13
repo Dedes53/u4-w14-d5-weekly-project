@@ -15,11 +15,16 @@ public class Immagine extends FileMultimediale implements Showable {
 
     // metodo interfaccia
     @Override
-    public String show() {
+    public void show() {
+
         StringBuilder lum = new StringBuilder();
+        String toShow;
+
         for (int i = 0; i < luminosita; i++) {
             lum.append('*');
         }
-        return nome + " " + lum;
+
+        toShow = nome + " " + lum;
+        System.out.println(toShow);
     }
 }
