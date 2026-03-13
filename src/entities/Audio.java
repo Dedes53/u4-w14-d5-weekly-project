@@ -16,6 +16,7 @@ public class Audio extends FileMultimediale implements Playable {
     }
 
 
+    //metodi interfaccia
     @Override
     public void play() {
         StringBuilder vol = new StringBuilder();
@@ -31,4 +32,31 @@ public class Audio extends FileMultimediale implements Playable {
             System.out.println(toPlay);
         }
     }
+
+    @Override
+    public void alzaVolume(int incr) {
+        if (incr < 0) {
+            System.out.println("Valore non valido");
+            return;
+        }
+
+        volume = Math.min(10, volume + incr);
+        if (volume == 10) System.out.println("Volume al massimo");
+        else System.out.println("Volume: " + volume);
+    }
+
+    @Override
+    public void abbassaVolume(int incr) {
+        if (incr < 0) {
+            System.out.println("Valore non valido");
+            return;
+        }
+
+        volume = Math.max(0, volume - incr);
+        if (volume == 0) System.out.println("Volume al minimo");
+        else System.out.println("Volume: " + volume);
+
+    }
+
+
 }

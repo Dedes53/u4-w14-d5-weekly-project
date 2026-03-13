@@ -1,8 +1,9 @@
 package entities;
 
+import interfaces.Luminosita;
 import interfaces.Playable;
 
-public class Video extends FileMultimediale implements Playable {
+public class Video extends FileMultimediale implements Playable, Luminosita {
 
     public final String tipo;
     public int durata;
@@ -41,5 +42,56 @@ public class Video extends FileMultimediale implements Playable {
 
     }
 
+    //volume
+    @Override
+    public void alzaVolume(int incr) {
+        if (incr < 0) {
+            System.out.println("Valore non valido");
+            return;
+        }
 
+        volume = Math.min(10, volume + incr);
+        if (volume == 10) System.out.println("Volume al massimo");
+        else System.out.println("Volume: " + volume);
+    }
+
+    @Override
+    public void abbassaVolume(int incr) {
+        if (incr < 0) {
+            System.out.println("Valore non valido");
+            return;
+        }
+
+        volume = Math.max(0, volume - incr);
+        if (volume == 0) System.out.println("Volume al minimo");
+        else System.out.println("Volume: " + volume);
+
+    }
+
+    //luminosita
+    @Override
+    public void alzaLuminosita(int incr) {
+
+        if (incr < 0) {
+            System.out.println("Valore non valido");
+            return;
+        }
+
+        luminosita = Math.min(10, luminosita + incr);
+
+        if (luminosita == 10) System.out.println("luminosità al massimo");
+    }
+
+    @Override
+    public void abbassaLuminosita(int incr) {
+        if (incr < 0) {
+            System.out.println("Valore non valido");
+            return;
+        }
+
+        luminosita = Math.max(0, luminosita - incr);
+        if (luminosita == 0) System.out.println("Luminosità al minimo");
+        else System.out.println("Luminosità: " + luminosita);
+
+    }
 }
