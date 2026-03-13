@@ -3,12 +3,21 @@ package entities;
 public abstract class FileMultimediale {
 
     //attributi
-    
-    //costruttori
+    public final String nome;
 
-    //metodi
+
+    //costruttori
+    public FileMultimediale(String nome) {
+        this.nome = nome;
+    }
 
     //getters
+    public String getNome() {
+        return this.nome;
+    }
+
     //setters
+
+    //metodi
 
 }
