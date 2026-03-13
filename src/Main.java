@@ -11,12 +11,26 @@ public class Main {
     static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
+        
         Video pippo = new Video("pippo", 4, 3, 5);
         Audio pluto = new Audio("pluto", 3, 5);
         Immagine minnie = new Immagine("Minnie", 3);
         Video paperino = new Video("paperino", 5, 6, 8);
         Audio topolino = new Audio("topolino", 2, 5);
+
+//        pippo.play();
+//        pluto.play();
+//        minnie.show();
+//
+//        minnie.abbassaLuminosita(11);
+//        minnie.alzaLuminosita(30);
+//        minnie.abbassaLuminosita(4);
+//        minnie.show();
+//
+//        pippo.abbassaVolume(23);
+//        pippo.alzaVolume(20);
+//        pippo.abbassaVolume(3);
+//        pippo.play();
 
         FileMultimediale[] files = {pippo, pluto, minnie, paperino, topolino};
 
@@ -28,6 +42,13 @@ public class Main {
         String prossimoFile = "Se vuoi riprodurre un altro file selezionalo da 1 a 5, se vuoi chiudere il player digita 0";
 
         while (isPlaying) {
+
+            //prova di implementazione controllo input:
+            if (!scanner.hasNextInt()) { //controlla che l'input sia un int. se non lo è ->
+                String errata = scanner.next(); //consuma l'input errato, altrimenti resta e da errore
+                System.out.println("Selezione non valida: " + errata + "." +
+                        "\nSeleziona un file da 1 a 5, 0 esci.");
+            }
 
             int file = scanner.nextInt();
 
@@ -70,19 +91,6 @@ public class Main {
 
 
         }
-//        pippo.play();
-//        pluto.play();
-//        minnie.show();
-//
-//        minnie.abbassaLuminosita(11);
-//        minnie.alzaLuminosita(30);
-//        minnie.abbassaLuminosita(4);
-//        minnie.show();
-//
-//        pippo.abbassaVolume(23);
-//        pippo.alzaVolume(20);
-//        pippo.abbassaVolume(3);
-//        pippo.play();
 
 
     }
